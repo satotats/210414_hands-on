@@ -1,11 +1,11 @@
 import ky from 'ky-universal';
 
 const http = ky.create({
-  prefixUrl: process.env.MICRO_CMS_API_ENDPOINT,
+  prefixUrl: process.env.NEXT_PUBLIC_API_URL,
   hooks: {
     beforeRequest: [
       (request) => {
-        request.headers.set('X-API-KEY', process.env.MICRO_CMS_API_KEY);
+        request.headers.set('X-API-KEY', <string>process.env.NEXT_PUBLIC_API_KEY);
       },
     ],
   },
